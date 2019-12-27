@@ -6,11 +6,13 @@ module.exports = {
 	entry: "./src/index.tsx",
 	output: {
 		path: path.resolve(__dirname, "build"),
-		filename: "bundle.js"
+		filename: "bundle.js",
+		publicPath: "/"
 	},
 	devServer: {
 		compress: true,
-		host: "0.0.0.0"
+		host: "0.0.0.0",
+		historyApiFallback: true
 	},
 	module: {
 		rules: [

@@ -7,20 +7,24 @@
 		"start": "webpack-dev-server --open"
 	},
 	"keywords": [],
-	"author": "Billy Endres",
+	"author": "Billy Endres <endres63@hotmail.com>",
 	"license": "ISC",
 	"dependencies": {
+		"@types/react-router-dom": "^5.1.3",
 		"react": "^16.12.0",
+		"react-cosmos": "^5.0.1",
 		"react-dom": "^16.12.0",
-		"styled-components": "^5.0.0-regexrehydrate"
+		"react-router-dom": "^5.1.2",
+		"styled-components": "^5.0.0-rc.2",
+		"stylis": "^3.5.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.5.5",
 		"@babel/preset-env": "^7.5.5",
 		"@babel/preset-react": "^7.0.0",
 		"@babel/preset-typescript": "^7.3.3",
-		"@types/react": "^16.12.0",
-		"@types/react-dom": "^16.12.0",
+		"@types/react": "^16.9.17",
+		"@types/react-dom": "^16.9.4",
 		"@types/styled-components": "^4.1.18",
 		"file-loader": "^4.2.0",
 		"html-webpack-plugin": "^3.2.0",
