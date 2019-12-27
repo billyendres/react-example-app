@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
-const Home = () => {
+const Home: React.FC = () => {
+	const history = useHistory();
+	const [name, setName] = useState("");
+
+	const handleSubmit = (e: { preventDefault: () => void }) => {
+		e.preventDefault();
+		history.push("hobbies");
+	};
+
 	return (
-		<div>
-			<h1>Home</h1>
-		</div>
+		<form onSubmit={handleSubmit}>
+			<label>
+				Name:
+				<input type="text" value={name} onChange={e => setName(e.target.value)} />
+			</label>
+			<input type="submit" value="Submit" />
+		</form>
 	);
 };
 

@@ -11,8 +11,8 @@ const App: React.FC = () => {
 	return (
 		<>
 			<GlobalStyle />
-			<Banner />
 			<Router>
+				<Banner />
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/experience" component={Experience} />
