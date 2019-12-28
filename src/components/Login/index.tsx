@@ -8,7 +8,7 @@ const Login: React.FC = () => {
 
 	const handleSubmit = (e: { preventDefault: () => void }) => {
 		if (name.length <= 2) {
-			alert("Please enter a valid name with 3 or more characters");
+			null;
 		} else {
 			e.preventDefault();
 			history.push("hobbies");
@@ -16,13 +16,15 @@ const Login: React.FC = () => {
 	};
 
 	return (
-		<Wrap>
-			<Form onSubmit={handleSubmit}>
-				<label>Welcome</label>
-				<input type="text" value={name} onChange={e => setName(e.target.value)} />
-				<input type="submit" value="Click To Enter" />
-			</Form>
-		</Wrap>
+		<>
+			<Wrap>
+				<Form onSubmit={handleSubmit}>
+					<label>Welcome</label>
+					<input type="text" value={name} onChange={e => setName(e.target.value)} />
+					<input type="submit" value="Click To Enter" />
+				</Form>
+			</Wrap>
+		</>
 	);
 };
 

@@ -9,7 +9,6 @@ const Banner: React.FC = () => {
 		<Wrap>
 			<h1 onClick={() => history.push("/")}>Developer Portfolio</h1>
 			<Links>
-				<h2 onClick={() => history.push("/home")}>Home</h2>
 				<h2 onClick={() => history.push("/experience")}>Experience</h2>
 				<h2 onClick={() => history.push("/hobbies")}>About Me</h2>
 				<h2 onClick={() => history.push("/projects")}>Projects</h2>
@@ -24,10 +23,14 @@ const Wrap = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 5rem;
-	background: red;
+	width: auto;
+	color: white;
+	height: 8rem;
+	box-shadow: 1.5rem 1.5rem 4rem 0.125rem black;
+	background: rgb(0, 0, 0);
 	padding: 0 2rem 0 2rem;
 	> h1 {
+		font-size: 3rem;
 		padding: 0 2rem 0 2rem;
 		cursor: pointer;
 	}
@@ -37,6 +40,7 @@ const Links = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	> h2 {
+		font-size: 2rem;
 		padding: 0 2rem 0 2rem;
 		cursor: pointer;
 	}
