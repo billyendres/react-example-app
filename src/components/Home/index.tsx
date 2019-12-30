@@ -1,19 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Icon from "@mdi/react";
 import { mdiGithubBox } from "@mdi/js";
 import { mdiLinkedinBox } from "@mdi/js";
+import { ThemeContext } from "../App";
 
 const Home: React.FC = () => {
+	const { theme } = useContext(ThemeContext);
+
 	return (
 		<Background>
-			<Wrap>
+			<Wrap style={theme ? DarkBackground : LightBackground}>
 				<h1>Billy Endres</h1>
 				<h2>Software Developer</h2>
 				<h3>endres63@hotmail.com</h3>
 				<IconWrap>
-					<Icon path={mdiGithubBox} color="white" size={5} />
-					<Icon path={mdiLinkedinBox} color="white" size={5} />
+					<a
+						href="https://www.linkedin.com/in/billy-endres-687743137/"
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						<Icon path={mdiLinkedinBox} color={theme ? "white" : "black"} size={5} />
+					</a>
+					<a
+						href="https://github.com/billyendres"
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						<Icon path={mdiGithubBox} color={theme ? "white" : "black"} size={5} />
+					</a>
 				</IconWrap>
 			</Wrap>
 		</Background>
@@ -38,31 +53,30 @@ const Wrap = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	border: 5px solid white;
+	text-align: center;
+	border: 5px solid;
 	border-radius: 3rem;
 	box-shadow: 1.5rem 1.5rem 4rem 0.125rem;
-	background: rgb(0, 0, 0);
 	> h1 {
+		width: 70%;
 		font-size: 5rem;
-		color: white;
 		margin-bottom: 0;
 		text-transform: uppercase;
-		border-bottom: 0.5rem dotted white;
+		border-bottom: 0.5rem dotted;
 	}
 	> h2 {
 		font-size: 4rem;
-		color: white;
 		margin-bottom: 0;
 		margin-top: 1rem;
 		text-transform: uppercase;
-		border-bottom: 0.4rem dotted white;
+		border-bottom: 0.4rem dotted;
 	}
 	> h3 {
+		width: 60%;
 		font-size: 3rem;
-		color: white;
 		margin-top: 1rem;
 		margin-bottom: 1rem;
-		border-bottom: 0.3rem dotted white;
+		border-bottom: 0.3rem dotted;
 	}
 `;
 
@@ -72,3 +86,11 @@ const IconWrap = styled.div`
 	justify-content: center;
 	margin-bottom: 1rem;
 `;
+
+const LightBackground = {
+	background: "rgba(255,255,255,0.7)"
+};
+
+const DarkBackground = {
+	background: "rgb(0, 0, 0)"
+};

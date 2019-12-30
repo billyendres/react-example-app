@@ -1,29 +1,60 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import GlobalStyle from "../GlobalStyle";
 import Banner from "../Banner";
 import Home from "../Home";
 import Experience from "../Experience";
 import Projects from "../Projects";
 import Hobbies from "../Hobbies";
-import Login from "../Login";
+import Particles from "react-particles-js";
+import { createGlobalStyle } from "styled-components";
+export const ThemeContext = createContext(undefined);
 
 const App: React.FC = () => {
+	const [theme, setTheme] = useState(true);
+
 	return (
-		<>
+		<ThemeContext.Provider value={{ theme }}>
 			<GlobalStyle />
+			{!!theme ? <DarkTheme /> : <LightTheme />}
 			<Router>
-				<Banner />
+				<Banner onClick={() => setTheme(!theme)} />
+				<Particles
+					style={{ position: "fixed", width: "100%" }}
+					params={{
+						particles: { number: { value: 100 }, size: { value: 6 } },
+						interactivity: { events: { onhover: { enable: true, mode: "repulse" } } }
+					}}
+				/>
 				<Switch>
 					<Route exact path="/" component={Home} />
-					{/* <Route exact path="/home" component={Home} /> */}
 					<Route exact path="/experience" component={Experience} />
 					<Route exact path="/projects" component={Projects} />
 					<Route exact path="/hobbies" component={Hobbies} />
 				</Switch>
 			</Router>
-		</>
+		</ThemeContext.Provider>
 	);
 };
 
 export default App;
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+	}`;
+
+const DarkTheme = createGlobalStyle`
+  body {
+		background: linear-gradient(to right, #3a7bd5, #3a6073); 
+		color: white;
+		font-family: 'Montserrat', sans-serif;  
+	}`;
+
+const LightTheme = createGlobalStyle`
+  body {
+    background:  linear-gradient(to right, #ff5e62, #ff9966);  
+		color: black;
+		font-family: 'Boogaloo', sans-serif;  
+  }`;

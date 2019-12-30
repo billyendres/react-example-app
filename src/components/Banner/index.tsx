@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import { ThemeContext } from "../App";
 
-const Banner: React.FC = () => {
+interface Props {
+	onClick: () => void;
+}
+
+const Banner: React.FC<Props> = ({ onClick }) => {
+	const { theme } = useContext(ThemeContext);
 	const history = useHistory();
 
 	return (
-		<Wrap>
-			<h1 onClick={() => history.push("/")}>Developer Portfolio</h1>
+		<Wrap style={theme ? DarkTheme : LightTheme}>
+			<h1 style={Header} onClick={() => history.push("/")}>
+				Developer Portfolio
+			</h1>
+			<button onClick={onClick}>Change Theme</button>
 			<Links>
 				<h2 onClick={() => history.push("/experience")}>Experience</h2>
 				<h2 onClick={() => history.push("/hobbies")}>About Me</h2>
@@ -24,17 +33,27 @@ const Wrap = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	width: auto;
-	color: white;
 	height: 8rem;
-	box-shadow: 1.5rem 1.5rem 4rem 0.125rem black;
-	background: rgb(0, 0, 0);
 	padding: 0 2rem 0 2rem;
-	> h1 {
-		font-size: 3rem;
-		padding: 0 2rem 0 2rem;
-		cursor: pointer;
-	}
 `;
+
+const DarkTheme = {
+	background: "rgb(0, 0, 0)",
+	color: "white",
+	boxShadow: "1.5rem 1.5rem 4rem 0.125rem white"
+};
+
+const LightTheme = {
+	background: "rgba(255,255,255,0.7)",
+	color: "black",
+	boxShadow: "1.5rem 1.5rem 4rem 0.125rem"
+};
+
+const Header = {
+	fontSize: "3rem",
+	padding: "0 2rem 0 2rem",
+	cursor: "pointer"
+};
 
 const Links = styled.div`
 	display: flex;
