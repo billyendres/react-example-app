@@ -39,6 +39,10 @@ const Wrap = styled.div`
 	width: auto;
 	height: 8rem;
 	padding: 0 2rem 0 2rem;
+	@media (max-width: 1650px) {
+		padding: 0 1rem 0 1rem;
+		height: 5rem;
+	}
 `;
 
 const Header = styled.div`
@@ -46,6 +50,9 @@ const Header = styled.div`
 	padding: 0 2rem 0 2rem;
 	cursor: pointer;
 	text-transform: uppercase;
+	@media (max-width: 1650px) {
+		font-size: 1.5rem;
+	}
 `;
 
 const Links = styled.div`
@@ -56,6 +63,10 @@ const Links = styled.div`
 		padding: 0 2rem 0 2rem;
 		cursor: pointer;
 		text-transform: uppercase;
+		@media (max-width: 1650px) {
+			font-size: 1rem;
+			padding: 0 1rem 0 1rem;
+		}
 	}
 `;
 
@@ -75,6 +86,13 @@ const DarkButton = styled.button`
 	:hover {
 		color: #3a7bd5;
 	}
+	@media (max-width: 1650px) {
+		font-size: 1rem;
+		border: 0.125rem solid;
+		width: 10rem;
+		height: 2.5rem;
+		border-radius: 0.5rem;
+	}
 `;
 
 const LightButton = styled.button`
@@ -92,6 +110,13 @@ const LightButton = styled.button`
 	font-family: "Boogaloo";
 	:hover {
 		color: #ff5e62;
+	}
+	@media (max-width: 1650px) {
+		font-size: 1rem;
+		border: 0.125rem solid;
+		width: 8rem;
+		height: 2rem;
+		border-radius: 0.5rem;
 	}
 `;
 

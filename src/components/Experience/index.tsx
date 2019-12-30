@@ -71,9 +71,25 @@ const Wrap = styled.div`
 		font-size: 5rem;
 		text-transform: uppercase;
 		margin-top: 4.5rem;
+		@media (max-width: 1650px) {
+			font-size: 2.5rem;
+			margin-top: 2.5rem;
+		}
+		@media (max-width: 800px) {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
 	}
 	> div {
 		font-size: 2rem;
 		margin: 0 10rem 10rem 10rem;
+		@media (max-width: 1650px) {
+			font-size: 1rem;
+			margin: 0 5rem 5rem 5rem;
+		}
+		@media (max-width: 800px) {
+			font-size: 0.75rem;
+			margin: 0 2rem 2rem 2rem;
+		}
 	}
 `;

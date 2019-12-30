@@ -35,10 +35,17 @@ const Wrap = styled.div`
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 2rem;
+	@media (max-width: 1650px) {
+		font-size: 1rem;
+	}
 	> h1 {
 		font-size: 4rem;
 		margin: 8rem 0 4rem 0;
 		width: 100%;
+		@media (max-width: 1650px) {
+			font-size: 2rem;
+			margin: 4rem 0 2rem 0;
+		}
 	}
 `;
 
@@ -47,4 +54,10 @@ const Image = styled.img`
 	height: 30rem;
 	border-radius: 3rem;
 	margin: 2rem 2rem 0 2rem;
+	@media (max-width: 1650px) {
+		width: 20rem;
+		height: 15rem;
+		border-radius: 2rem;
+		margin: 1rem 1rem 0 1rem;
+	}
 `;
