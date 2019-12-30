@@ -67,6 +67,7 @@ const Wrap = styled.div`
 	flex-wrap: wrap;
 	justify-content: center;
 	> h1 {
+		border-bottom: 0.25rem solid;
 		font-size: 5rem;
 		text-transform: uppercase;
 		margin-top: 4.5rem;

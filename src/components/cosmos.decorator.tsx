@@ -1,11 +1,5 @@
 import React from "react";
-import GlobalStyle from "./GlobalStyle";
 
-const Wrap: React.FC = ({ children }) => (
-	<>
-		<GlobalStyle />
-		{children}
-	</>
-);
+const Wrap: React.FC = ({ children }) => <>{children}</>;
 
 export default Wrap;
