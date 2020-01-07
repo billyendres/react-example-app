@@ -40,7 +40,7 @@ const Experience: React.FC = () => {
 				focuses work around, and to complete any required code tests.
 				<p>
 					Thanks a lot for taking the time to read my application. Please feel free
-					to contact me anytime, I would love to discuss the position further and
+					to contact me anytime, I would love to discuss any availble position and
 					learn more about your company,
 				</p>
 				<p>Billy</p>
