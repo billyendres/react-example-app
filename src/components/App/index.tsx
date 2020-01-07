@@ -14,14 +14,13 @@ const App: React.FC = () => {
 
 	return (
 		<ThemeContext.Provider value={{ theme }}>
-			<GlobalStyle />
 			{!!theme ? <DarkTheme /> : <LightTheme />}
 			<Router>
 				<Banner onClick={() => setTheme(!theme)} />
 				<Particles
 					style={{ position: "fixed", width: "100%" }}
 					params={{
-						particles: { number: { value: 100 }, size: { value: 6 } },
+						particles: { number: { value: 80 }, size: { value: 4 } },
 						interactivity: { events: { onhover: { enable: true, mode: "repulse" } } }
 					}}
 				/>
@@ -38,15 +37,11 @@ const App: React.FC = () => {
 
 export default App;
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-	}`;
-
 const DarkTheme = createGlobalStyle`
   body {
+		margin: 0;
+    padding: 0;
+    height: 100%;
 		background: linear-gradient(to right, #3a7bd5, #3a6073); 
 		color: white;
 		font-family: 'Montserrat', sans-serif;  
@@ -54,6 +49,9 @@ const DarkTheme = createGlobalStyle`
 
 const LightTheme = createGlobalStyle`
   body {
+		margin: 0;
+    padding: 0;
+    height: 100%;
     background:  linear-gradient(to right, #ff5e62, #ff9966);  
 		color: black;
 		font-family: 'Boogaloo', sans-serif;  

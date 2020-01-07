@@ -54,10 +54,12 @@ const Image = styled.img`
 	height: 30rem;
 	border-radius: 3rem;
 	margin: 2rem 2rem 0 2rem;
+	border: 0.4rem solid;
 	@media (max-width: 1650px) {
 		width: 20rem;
 		height: 15rem;
 		border-radius: 2rem;
 		margin: 1rem 1rem 0 1rem;
+		border: 0.2rem solid;
 	}
 `;
