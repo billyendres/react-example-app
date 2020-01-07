@@ -3,13 +3,17 @@
 	"version": "1.0.0",
 	"description": "React/Typescript Example Application.",
 	"main": "webpack.config.js",
+	"homepage": "https://billyendres.github.io/react-example-app/",
 	"scripts": {
-		"start": "webpack-dev-server --open"
+		"start": "webpack-dev-server --open",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"keywords": [],
 	"author": "Billy Endres <endres63@hotmail.com>",
 	"license": "ISC",
 	"dependencies": {
+		"gh-pages": "^2.2.0",
 		"react": "^16.9.0",
 		"react-dom": "^16.9.0",
 		"react-particles-js": "^2.7.0",
