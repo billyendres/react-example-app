@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
 		{ project: "Jest Unit Test Example", src: jestExample },
 		{ project: "Code Snippet from Recent Marriot Hotel App", src: codeSnippet },
 		{
-			project: "Device Testing Suite, Cloud Console Application",
+			project: "Device Testing Suite",
 			src: deviceTest
 		}
 	];
